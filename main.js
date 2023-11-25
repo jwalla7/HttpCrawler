@@ -1,1 +1,17 @@
-console.log("hello world");
+const { crawlPage } = require('./crawl.js');
+
+const main = () => {
+    if (process.argv.length < 3) {
+        console.log("No website URL provided.");
+        process.exit(1);
+    }
+    if (process.argv.length > 3) {
+        console.log("Too many arguments.");
+        process.exit(1);
+    }
+    const baseURL = process.argv[2];
+    console.log(`Start crawling of ${baseURL}...`)
+    crawlPage(baseURL);
+}
+
+main();
