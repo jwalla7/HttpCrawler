@@ -85,12 +85,12 @@ test("getURLsFromHTML invaild", () => {
 	<html>
 		<body>s
 			<a href="invalid">
-				Invaild
+				Invaild URL
 			</a>
 		</body>
 	</html>
 	`
-	const inputBaseURL = "Invalid"
+	const inputBaseURL = "https://blog.boot.dev"
 	const actual = getURLsFromHTML(inputHTMLBody, inputBaseURL)
 	const expected = []
 	expect(actual).toEqual(expected)
